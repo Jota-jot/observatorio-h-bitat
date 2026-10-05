@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --acw-navy: #0A1D37;
+    --acw-blue: #0088CE;
+    --acw-teal: #14A88B;
+    --acw-lime: #7ED321;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0A1D37;
+  }
+
+  h1, h2, .font-editorial {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.bg-acw-gradient {
+  background: linear-gradient(90deg, #0088CE 0%, #14A88B 55%, #7ED321 100%);
+}
+
+/* ==========================================================================
+   MODO ALTA VISIBILIDAD (WCAG AAA · Accesibilidad para Mayores y Baja Visión)
+   ========================================================================== */
+html.high-visibility-mode {
+  font-size: 118.75%; /* Escala todos los tamaños rem (+19% base: de 16px a 19px) */
+}
+
+html.high-visibility-mode body {
+  background-color: #FFFFFF !important;
+  color: #030B17 !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.012em !important;
+}
+
+/* Refuerzo de contraste de textos secundarios y grises sobre fondos claros */
+html.high-visibility-mode .text-slate-400,
+html.high-visibility-mode .text-slate-500,
+html.high-visibility-mode .text-slate-600,
+html.high-visibility-mode .text-slate-700 {
+  color: #0A1D37 !important;
+  font-weight: 500 !important;
+}
+
+/* Mantener contraste claro dentro de bloques oscuros (#0A1D37) */
+html.high-visibility-mode .bg-\[\#0A1D37\] .text-slate-300,
+html.high-visibility-mode .bg-\[\#0A1D37\] .text-slate-400,
+html.high-visibility-mode .bg-\[\#0A1D37\] .text-slate-500 {
+  color: #F8FAFC !important;
+}
+
+/* Refuerzo de enlaces y acentos cromáticos para lectura nítida */
+html.high-visibility-mode .text-\[\#0088CE\] {
+  color: #005A8C !important;
+  font-weight: 700 !important;
+}
+
+html.high-visibility-mode .text-\[\#14A88B\] {
+  color: #0B6B58 !important;
+  font-weight: 700 !important;
+}
+
+/* Bordes de alto contraste para delimitar tarjetas, tablas y controles */
+html.high-visibility-mode .border-slate-100,
+html.high-visibility-mode .border-slate-200,
+html.high-visibility-mode .border-slate-300 {
+  border-color: #334155 !important;
+}
+
+/* Tamaño mínimo para textos pequeños (evita letra menor de 14.5px) */
+html.high-visibility-mode .text-\[10px\],
+html.high-visibility-mode .text-\[11px\],
+html.high-visibility-mode .text-xs {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Foco de teclado de alta visibilidad */
+html.high-visibility-mode a:focus-visible,
+html.high-visibility-mode button:focus-visible,
+html.high-visibility-mode input:focus-visible,
+html.high-visibility-mode select:focus-visible {
+  outline: 3px solid #005A8C !important;
+  outline-offset: 2px !important;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #FFFFFF !important;
+  }
+}
