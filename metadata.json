@@ -1,0 +1,8 @@
+{
+  "name": "Observatorio Domus — Epidemiología y Prevención de Accidentes Domésticos",
+  "description": "Panorama epidemiológico interactivo sobre lesiones en el hogar en Europa y España y generador personalizado de protocolos de prevención doméstica basado en evidencia científica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
